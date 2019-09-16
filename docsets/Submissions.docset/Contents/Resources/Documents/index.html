@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Submissions  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="Submissions  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">Submissions Docs</a> (92% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">Submissions Reference</a>
+        <img id="carat" src="img/carat.png" />
+        Submissions  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/FieldCache.html">FieldCache</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/FileTag.html">FileTag</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/InputTag.html">InputTag</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/SelectTag.html">SelectTag</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/SelectTag/Option.html">– Option</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/SubmissionsMiddleware.html">SubmissionsMiddleware</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/SubmissionsProvider.html">SubmissionsProvider</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Enums/AbsentValueStrategy.html">AbsentValueStrategy</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/ValidationContext.html">ValidationContext</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions/Future.html">Future</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/LeafTagConfig.html">LeafTagConfig</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/Loginable.html">Loginable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/Request.html">Request</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/Sequence.html">Sequence</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/TagContext.html">TagContext</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/TagContext/SubmissionsData.html">– SubmissionsData</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols/FieldsRepresentable.html">FieldsRepresentable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/OptionRepresentable.html">OptionRepresentable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/Submittable.html">Submittable</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/Field.html">Field</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/RequiredStrategy.html">RequiredStrategy</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/SubmissionValidationError.html">SubmissionValidationError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/TagTemplatePaths.html">TagTemplatePaths</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <h1 id='submissions' class='heading'>Submissions 📩</h1>
+
+<p><a href="http://swift.org"><img src="https://img.shields.io/badge/Swift-4.2-brightgreen.svg" alt="Swift Version"></a>
+<a href="http://vapor.codes"><img src="https://img.shields.io/badge/Vapor-3.1-30B6FC.svg" alt="Vapor Version"></a>
+<a href="https://circleci.com/gh/nodes-vapor/submissions/tree/master"><img src="https://circleci.com/gh/nodes-vapor/submissions/tree/master.svg?style=svg" alt="CircleCI"></a>
+<a href="https://codebeat.co/projects/github-com-nodes-vapor-submissions-master"><img src="https://codebeat.co/badges/b9c894d6-8c6a-4a07-bfd5-29db898c8dfe" alt="codebeat badge"></a>
+<a href="https://codecov.io/gh/nodes-vapor/submissions"><img src="https://codecov.io/gh/nodes-vapor/submissions/branch/master/graph/badge.svg" alt="codecov"></a>
+<a href="http://clayallsopp.github.io/readme-score?url=https://github.com/nodes-vapor/submissions"><img src="http://readme-score-api.herokuapp.com/score.svg?url=https://github.com/nodes-vapor/submissions" alt="Readme Score"></a>
+<a href="https://raw.githubusercontent.com/nodes-vapor/reset/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="GitHub license"></a></p>
+<h1 id='installation' class='heading'>Installation</h1>
+<h2 id='package-swift' class='heading'>Package.swift</h2>
+
+<p>Add <code>Submissions</code> to the Package dependencies:</p>
+<pre class="highlight swift"><code><span class="nv">dependencies</span><span class="p">:</span> <span class="p">[</span>
+    <span class="o">...</span><span class="p">,</span>
+    <span class="o">.</span><span class="nf">package</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/nodes-vapor/submissions.git"</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="s">"2.0.0-beta"</span><span class="p">)</span>
+<span class="p">]</span>
+</code></pre>
+
+<p>as well as to your target (e.g. <q>App</q>):</p>
+<pre class="highlight swift"><code><span class="nv">targets</span><span class="p">:</span> <span class="p">[</span>
+    <span class="o">...</span>
+    <span class="o">.</span><span class="nf">target</span><span class="p">(</span>
+        <span class="nv">name</span><span class="p">:</span> <span class="s">"App"</span><span class="p">,</span>
+        <span class="nv">dependencies</span><span class="p">:</span> <span class="p">[</span><span class="o">...</span> <span class="s">"Submissions"</span> <span class="o">...</span><span class="p">]</span>
+    <span class="p">),</span>
+    <span class="o">...</span>
+<span class="p">]</span>
+</code></pre>
+<h2 id='introduction' class='heading'>Introduction</h2>
+
+<p>Submissions was written to reduce the amount of boilerplate needed to write the common tasks of rendering forms and processing and validating data from POST/PUT/PATCH requests (PPP-request, or <em>submission</em> for short). Submissions makes it easy to present detailed validation errors for web users as well as API consumers.</p>
+
+<p>Submissions is designed to be flexible. Its functionality is based around <code><a href="Structs/Field.html">Field</a></code>s which are abstractions that model the parts of a <em>submission</em>. </p>
+
+<p>single values with its validators and meta data such as a label. Usually a form or API request involves multiple properties comprising a model. This can be modeled using multiple <code><a href="Structs/Field.html">Field</a></code>s.</p>
+<h2 id='getting-started' class='heading'>Getting started 🚀</h2>
+
+<p>First make sure that you&rsquo;ve imported Submissions everywhere it&rsquo;s needed:</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">Submissions</span>
+</code></pre>
+<h3 id='adding-the-provider' class='heading'>Adding the Provider</h3>
+
+<p><q>Submissions</q> comes with a light-weight provider that we&rsquo;ll need to register in the <code>configure</code> function in our <code>configure.swift</code> file:</p>
+<pre class="highlight swift"><code><span class="k">try</span> <span class="n">services</span><span class="o">.</span><span class="nf">register</span><span class="p">(</span><span class="kt">SubmissionsProvider</span><span class="p">())</span>
+</code></pre>
+
+<p>This makes sure that fields and errors can be stored on the request using a <code><a href="Classes/FieldCache.html">FieldCache</a></code> service.</p>
+<h2 id='validating-api-requests' class='heading'>Validating API requests</h2>
+
+<p><em>TODO</em></p>
+<h2 id='validating-html-form-requests' class='heading'>Validating HTML form requests</h2>
+
+<p>Submissions comes with leaf tags that can render fields into HTML. The leaf files needs to be copied from the folder <code>Resources/Views/Submissions</code> from <code>Submissions</code> to your project&rsquo;s <code>Resources/Views</code>. Then we can register Submissions&rsquo; leaf tags where you register your other leaf tags, for instance:</p>
+<pre class="highlight swift"><code><span class="k">var</span> <span class="nv">leafTagConfig</span> <span class="o">=</span> <span class="kt">LeafTagConfig</span><span class="o">.</span><span class="nf">default</span><span class="p">()</span>
+<span class="o">...</span>
+<span class="n">leafTagConfig</span><span class="o">.</span><span class="nf">useSubmissionsLeafTags</span><span class="p">()</span>
+<span class="n">services</span><span class="o">.</span><span class="nf">register</span><span class="p">(</span><span class="n">leafTagConfig</span><span class="p">)</span>
+</code></pre>
+
+<p>You can customize where Submissions looks for the leaf tags by passing in a modified instance of <code><a href="Structs/TagTemplatePaths.html">TagTemplatePaths</a></code> to <code>useSubmissionsLeafTags(paths:)</code>.</p>
+
+<p>In order to render a view that contains Submissions leaf tags we need to ensure that the <code><a href="Structs/Field.html">Field</a></code>s are added to the field cache and that the <code>Request</code> is passed into the <code>render</code> call:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">nameField</span> <span class="o">=</span> <span class="kt">Field</span><span class="p">(</span><span class="nv">key</span><span class="p">:</span> <span class="s">"name"</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="s">""</span><span class="p">,</span> <span class="nv">label</span><span class="p">:</span> <span class="s">"Name"</span><span class="p">)</span>
+<span class="k">try</span> <span class="n">req</span><span class="o">.</span><span class="nf">fieldCache</span><span class="p">()</span><span class="o">.</span><span class="nf">addFields</span><span class="p">([</span><span class="n">nameField</span><span class="p">])</span>
+<span class="k">try</span> <span class="n">req</span><span class="o">.</span><span class="nf">view</span><span class="p">()</span><span class="o">.</span><span class="nf">render</span><span class="p">(</span><span class="s">"index"</span><span class="p">,</span> <span class="nv">on</span><span class="p">:</span> <span class="n">req</span><span class="p">)</span>
+</code></pre>
+
+<p>In your leaf file you can then refer to this field using an appropriate tag and the key <q>name</q> as defined when creating the Field.</p>
+<h3 id='tags' class='heading'>Tags</h3>
+<h4 id='input-tags' class='heading'>Input tags</h4>
+
+<p>The following input tags are available for your leaf files.</p>
+<pre class="highlight plaintext"><code>#submissions:checkbox( ... )
+#submissions:email( ... )
+#submissions:hidden( ... )
+#submissions:password( ... )
+#submissions:text( ... )
+#submissions:textarea( ... )
+</code></pre>
+
+<p>They all accept the same number of parameters.</p>
+
+<p>With these options:</p>
+
+<table><thead>
+<tr>
+<th>Position</th>
+<th>Type</th>
+<th>Description</th>
+<th>Example</th>
+<th>Required?</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+<td>key</td>
+<td>Key to the related field in the field cache</td>
+<td><em><q>name</q></em></td>
+<td>yes</td>
+</tr>
+<tr>
+<td>2</td>
+<td>placeholder</td>
+<td>Placeholder text</td>
+<td><em><q>Enter name</q></em></td>
+<td>no</td>
+</tr>
+<tr>
+<td>3</td>
+<td>help text</td>
+<td>Help text</td>
+<td><em><q>This name will be visible to others</q></em></td>
+<td>no</td>
+</tr>
+</tbody></table>
+<h4 id='file-tag' class='heading'>File tag</h4>
+
+<p>To add a file upload to your form use this leaf tag.</p>
+<pre class="highlight plaintext"><code>#submissions:file( ... )
+</code></pre>
+
+<p>With these options:</p>
+
+<table><thead>
+<tr>
+<th>Position</th>
+<th>Type</th>
+<th>Description</th>
+<th>Example</th>
+<th>Required?</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+<td>key</td>
+<td>Key to the related field in the field cache</td>
+<td><em><q>avatar</q></em></td>
+<td>yes</td>
+</tr>
+<tr>
+<td>2</td>
+<td>help text</td>
+<td>Help text</td>
+<td><em><q>This will replace your existing avatar</q></em></td>
+<td>no</td>
+</tr>
+<tr>
+<td>3</td>
+<td>accept</td>
+<td>Placeholder text</td>
+<td><em><q>image/*</q></em></td>
+<td>no</td>
+</tr>
+<tr>
+<td>4</td>
+<td>multiple</td>
+<td>Support multple file uploads</td>
+<td><em><q>true</q></em> (or any other non-nil value)</td>
+<td>no</td>
+</tr>
+</tbody></table>
+<h4 id='select-tag' class='heading'>Select tag</h4>
+
+<p>A select tag can be added as follows.</p>
+<pre class="highlight plaintext"><code>#submissions:select( ... )
+</code></pre>
+
+<p>With these options:</p>
+
+<table><thead>
+<tr>
+<th>Position</th>
+<th>Type</th>
+<th>Description</th>
+<th>Example</th>
+<th>Required?</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+<td>key</td>
+<td>Key to the related field in the field cache</td>
+<td><em><q>role</q></em></td>
+<td>yes</td>
+</tr>
+<tr>
+<td>2</td>
+<td>options</td>
+<td>The possible options in the drop down</td>
+<td><em>roles</em></td>
+<td>no</td>
+</tr>
+<tr>
+<td>3</td>
+<td>placeholder</td>
+<td>Placeholder text</td>
+<td><em><q>Select an role</q></em></td>
+<td>no</td>
+</tr>
+<tr>
+<td>4</td>
+<td>help text</td>
+<td>Help text</td>
+<td><em><q>The role defines the actions a user is allowed to perform</q></em></td>
+<td>no</td>
+</tr>
+</tbody></table>
+
+<p>The second option (e.g. <code>roles</code>) is a special parameter that defines the dropdown options. It has to be passed into the render call something like this.</p>
+<pre class="highlight swift"><code><span class="kd">enum</span> <span class="kt">Role</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">CaseIterable</span><span class="p">,</span> <span class="kt">Codable</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="n">user</span><span class="p">,</span> <span class="n">admin</span><span class="p">,</span> <span class="n">superAdmin</span>
+<span class="p">}</span>
+
+<span class="kd">extension</span> <span class="kt">Role</span><span class="p">:</span> <span class="kt">OptionRepresentable</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">optionID</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">self</span><span class="o">.</span><span class="n">rawValue</span>
+    <span class="p">}</span>
+
+    <span class="k">var</span> <span class="nv">optionValue</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">self</span><span class="o">.</span><span class="n">rawValue</span><span class="o">.</span><span class="nf">uppercased</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">let</span> <span class="nv">roles</span><span class="p">:</span> <span class="p">[</span><span class="kt">Role</span><span class="p">]</span> <span class="o">=</span> <span class="o">.</span>
+<span class="k">try</span> <span class="n">req</span><span class="o">.</span><span class="nf">view</span><span class="p">()</span><span class="o">.</span><span class="nf">render</span><span class="p">(</span><span class="s">"index"</span><span class="p">,</span> <span class="p">[</span><span class="s">"roles"</span><span class="p">:</span> <span class="n">roles</span><span class="o">.</span><span class="n">allCases</span><span class="o">.</span><span class="nf">makeOptions</span><span class="p">()]</span> <span class="nv">on</span><span class="p">:</span> <span class="n">req</span><span class="p">)</span>
+</code></pre>
+<h2 id='credits' class='heading'>🏆 Credits</h2>
+
+<p>This package is developed and maintained by the Vapor team at <a href="https://www.nodesagency.com">Nodes</a>.
+The package owner for this project is <a href="https://github.com/siemensikkema">Siemen</a>.</p>
+<h2 id='license' class='heading'>📄 License</h2>
+
+<p>This package is open-sourced software licensed under the <a href="http://opensource.org/licenses/MIT">MIT license</a>.</p>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2019 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2019-09-16)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.10.0</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
