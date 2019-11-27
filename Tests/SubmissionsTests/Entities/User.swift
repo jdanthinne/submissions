@@ -27,23 +27,27 @@ extension User: FieldsRepresentable {
             Field(
                 keyPath: \.name,
                 instance: user,
+                type: .text,
                 label: "Name",
                 validators: [.count(2...)]
             ),
             Field(
                 keyPath: \.requiredButOptional,
                 instance: user,
+                type: .text,
                 isRequired: true
             ),
             Field(
                 keyPath: \.emptyStringMeansAbsent,
                 instance: user,
+                type: .text,
                 isRequired: true,
                 isAbsentWhen: .equal(to: "")
             ),
             Field(
                 keyPath: \.unique,
                 instance: user,
+                type: .text,
                 asyncValidators: [{ req, _ in
                     guard user?.unique != "unique" else {
                         return req.future([BasicValidationError("must be unique")])

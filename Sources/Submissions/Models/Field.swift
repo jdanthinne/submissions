@@ -3,15 +3,28 @@ import Vapor
 
 /// Wraps a (string representation of a) value including validation metadata. Can be validated.
 public struct Field {
+    
+    /// Available field types.
+    public enum FieldType {
+        case text
+        case password
+        case email
+    }
 
     /// The key that references this field.
     public let key: String
+    
+    /// The type of field.
+    public let type: FieldType
 
     /// The value for this field represented as a `String`.
     public let value: String?
 
     /// A label describing this field. Used by Tags to render alongside an input field.
     public let label: String?
+    
+    /// The placeholder for this field.
+    public let placeholder: String?
 
     /// Whether or not values are allowed to be absent.
     public let isRequired: Bool
@@ -38,8 +51,10 @@ public struct Field {
     ///   - absentValueStrategy: Determines which values to treat as absent.
     public init<V: CustomStringConvertible>(
         key: String,
+        type: FieldType,
         value: V? = nil,
         label: String? = nil,
+        placeholder: String? = nil,
         validators: [Validator<V>] = [],
         asyncValidators: [Validate] = [],
         isRequired: Bool = false,
@@ -50,8 +65,10 @@ public struct Field {
         let valueIfPresent = value.flatMap(absentValueStrategy.valueIfPresent)
 
         self.key = key
+        self.type = type
         self.value = valueIfPresent?.description
         self.label = label
+        self.placeholder = placeholder
         self.isRequired = isRequired
 
         validate = { req, context in
@@ -106,7 +123,9 @@ extension Field {
     public init<S: Reflectable, V: CustomStringConvertible>(
         keyPath: KeyPath<S, V>,
         instance: S? = nil,
+        type: FieldType,
         label: String? = nil,
+        placeholder: String? = nil,
         validators: [Validator<V>] = [],
         asyncValidators: [Validate] = [],
         isRequired: Bool = false,
@@ -116,8 +135,10 @@ extension Field {
     ) throws {
         self.init(
             key: try S.key(for: keyPath),
+            type: type,
             value: instance?[keyPath: keyPath],
             label: label,
+            placeholder: placeholder,
             validators: validators,
             asyncValidators: asyncValidators,
             isRequired: isRequired,
@@ -144,7 +165,9 @@ extension Field {
     public init<S: Reflectable, V: CustomStringConvertible>(
         keyPath: KeyPath<S, V?>,
         instance: S? = nil,
+        type: FieldType,
         label: String? = nil,
+        placeholder: String? = nil,
         validators: [Validator<V>] = [],
         asyncValidators: [Validate] = [],
         isRequired: Bool = false,
@@ -154,8 +177,10 @@ extension Field {
     ) throws {
         self.init(
             key: try S.key(for: keyPath),
+            type: type,
             value: instance?[keyPath: keyPath],
             label: label,
+            placeholder: placeholder,
             validators: validators,
             asyncValidators: asyncValidators,
             isRequired: isRequired,
