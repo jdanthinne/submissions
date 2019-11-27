@@ -51,7 +51,7 @@ public struct Field {
     ///   - absentValueStrategy: Determines which values to treat as absent.
     public init<V: CustomStringConvertible>(
         key: String,
-        type: FieldType,
+        type: FieldType = .text,
         value: V? = nil,
         label: String? = nil,
         placeholder: String? = nil,
@@ -123,7 +123,7 @@ extension Field {
     public init<S: Reflectable, V: CustomStringConvertible>(
         keyPath: KeyPath<S, V>,
         instance: S? = nil,
-        type: FieldType,
+        type: FieldType = .text,
         label: String? = nil,
         placeholder: String? = nil,
         validators: [Validator<V>] = [],
@@ -165,7 +165,7 @@ extension Field {
     public init<S: Reflectable, V: CustomStringConvertible>(
         keyPath: KeyPath<S, V?>,
         instance: S? = nil,
-        type: FieldType,
+        type: FieldType = .text,
         label: String? = nil,
         placeholder: String? = nil,
         validators: [Validator<V>] = [],
